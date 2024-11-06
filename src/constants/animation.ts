@@ -1,0 +1,2 @@
+export const ANIMATION_DURATION_FAST = 0.2;
+export const ANIMATION_DURATION_SLOW = 0.75;

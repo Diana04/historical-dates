@@ -1,0 +1,29 @@
+/* Bebas Neue */
+@font-face {
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: normal;
+    src:
+        url('../assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf') format('ttf'),
+}
+
+/* PT Sans regular */
+@font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: normal;
+    src:
+        url('../assets/fonts/PT_Sans/PTSans-Regular.ttf') format('ttf'),
+}
+
+/* PT Sans bold */
+@font-face {
+    font-family: 'PT Sans';
+    font-style: bold;
+    font-weight: bold;
+    src:
+        url('../assets/fonts/PT_Sans/PTSans-Bold.ttf') format('ttf'),
+}
+
+$primary-font-family: 'PT Sans', sans-serif;
+$secondary-font-family: 'Bebas Neue', sans-serif;

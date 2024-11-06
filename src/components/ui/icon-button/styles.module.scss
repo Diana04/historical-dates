@@ -1,0 +1,53 @@
+@use '@/styles/sizes.module.scss' as sizes;
+@use '@/styles/animation.module.scss' as animation;
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(48, 62, 88, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color animation.$duration-fast ease-out;
+
+    & path {
+        stroke: #42567A;
+    }
+
+    &--disabled {
+        opacity: 0.5;
+        pointer-events: none;
+        cursor: default;
+    }
+
+    &:hover {
+        background-color: #fff;
+    }
+
+    &--filled {
+        box-shadow: 0 0 15px 0 rgba(56, 119, 238, 0.1);
+        background-color: #fff;
+        border: none;
+
+        & path {
+            stroke: #3877EE;
+        }
+
+        &:hover {
+            background-color: #fff;
+        }
+    }
+
+    &--small {
+        width: 40px;
+        height: 40px;
+    }
+
+    @include sizes.for-mobile {
+        width: 25px;
+        height: 25px;
+    }
+}

@@ -1,0 +1,1 @@
+export { PeriodEventsSwiper } from './PeriodEventsSwiper';

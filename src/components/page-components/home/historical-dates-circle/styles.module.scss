@@ -1,0 +1,88 @@
+@use '@/styles/animation.module.scss' as animation;
+@use '@/styles/colors.module.scss' as colors;
+
+$circle-container-width: 530px;
+$circle-icon-size: 6px;
+$circle-icon-size--active: 56px;
+
+.circle-container {
+    position: relative;
+    width: $circle-container-width;
+    height: $circle-container-width;
+    border: 1px solid colors.$border-medium;
+    border-radius: 50%;
+    transition: transform animation.$duration-slow ease-out;
+}
+  
+.circle-icon {
+    position: absolute;
+    top: calc(50% - $circle-icon-size / 2);
+    left: calc(50% - $circle-icon-size / 2);
+    transform-origin: center;
+    width: $circle-icon-size;
+    height: $circle-icon-size;
+    background-color: colors.$black-blue;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all animation.$duration-fast ease-out;
+
+    & > .circle-icon-text {
+        visibility: hidden;
+    }
+
+    &:hover, &--active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: $circle-icon-size--active;
+        height: $circle-icon-size--active;
+        border: 1px solid colors.$border-dark;
+        top: calc(50% - $circle-icon-size--active / 2);
+        left: calc(50% - $circle-icon-size--active / 2);
+        background-color: colors.$background;
+
+        & > .circle-icon-text {
+            visibility: visible;
+        }
+    }
+
+    &--active {
+        pointer-events: none;
+        cursor: default;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+}
+
+.circle-icon-text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: transform animation.$duration-slow ease-out;
+}
+
+.period-title {
+    position: absolute;
+    top: 13px;
+    left: 76px;
+    font-size: 20px;
+    font-weight: bold;
+    display: none;
+
+    &--visible {
+        display: block;
+    }
+}

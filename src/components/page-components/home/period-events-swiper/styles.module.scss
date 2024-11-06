@@ -1,0 +1,81 @@
+@use '@/styles/fonts.module.scss' as fonts;
+@use '@/styles/sizes.module.scss' as sizes;
+@use '@/styles/animation.module.scss' as animation;
+@use '@/styles/colors.module.scss' as colors;
+
+.swiper-container {
+    width: 100%;
+    position: relative;
+}
+
+.swiper {
+    width: 100%;
+    cursor: grab;
+}
+
+.event-container {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    margin-right: 80px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    @include sizes.for-mobile {
+        width: 160px;
+        margin-right: 25px;
+    }
+}
+
+.event-year {
+    font-family: fonts.$secondary-font-family;
+    font-size: 25px;
+    font-weight: bold;
+    color: colors.$blue;
+    margin-bottom: 15px;
+    line-height: 120%;
+
+    @include sizes.for-mobile {
+        font-size: 16px;
+    }
+}
+
+.event-description {
+    font-size: 20px;
+    line-height: 30px;
+
+    @include sizes.for-mobile {
+        font-size: 14px;
+        line-height: 145%;
+    }
+}
+
+.nav-container {
+    position: absolute;
+    left: -60px;
+    right: -60px;
+    top: 40px;
+    display: flex;
+    justify-content: space-between;
+
+    @include sizes.for-mobile {
+        display: none;
+    }
+}
+
+.button {
+    visibility: visible;
+    transition: visibility animation.$duration-fast ease-out;
+
+    &--inactive {
+        visibility: hidden;
+        pointer-events: none;
+        cursor: default;
+    }
+}
+
+.arrow--right {
+    transform: rotate(180deg);
+}

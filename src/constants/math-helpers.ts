@@ -1,0 +1,1 @@
+export const CIRCLE_DEGREES_NUMBER = 360;

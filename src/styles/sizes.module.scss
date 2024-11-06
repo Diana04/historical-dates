@@ -1,0 +1,7 @@
+$desktop-content-max-width: 1440px;
+
+@mixin for-mobile {
+    @media (max-width: 480px) { @content; }
+}
+
+
